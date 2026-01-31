@@ -1,5 +1,7 @@
-// import dotenv from "dotenv";
-// dotenv.config();
+/*import dotenv from "dotenv";
+dotenv.config({
+  path: './.env'
+});*/   //env variables are being loded from scripts in package.json
 import connectDB from "./db/index.js";
 import app from "./app.js";
 
