@@ -88,7 +88,7 @@ const loginUser = asyncHandler(async (req,res)=>{
     //send cookeis
     const {email, userName, password} = req.body
 
-    if(!userName || !email){
+    if(!userName && !email){
         throw new ApiError(400, "user and email are required")
     }
 
@@ -142,8 +142,8 @@ const logoutUser = asyncHandler(async (req,res)=>{
 }
 return res
 .status(200)
-.clearCookie(accessToken, options)
-.clearCookie(refreshToken, options)
+.clearCookie("accessToken", options)
+.clearCookie("refreshToken", options)
 .json(
     new ApiResponse(200,
         {},
